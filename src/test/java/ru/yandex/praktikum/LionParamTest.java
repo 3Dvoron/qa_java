@@ -23,18 +23,13 @@ public class LionParamTest {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},
-                {"qwerty", true},
         };
     }
 
     @Test
-    public void hasManeTest() {
-        try {
+    public void hasManeTest() throws Exception {
             Lion lion = new Lion(sex,feline);
             boolean actual = lion.doesHaveMane();
             Assert.assertEquals(hasMane, actual);
-        } catch (Exception e) {
-            Assert.assertEquals(hasMane, e.getMessage().equals("Используйте допустимые значения пола животного - самей или самка"));
-        }
     }
 }
