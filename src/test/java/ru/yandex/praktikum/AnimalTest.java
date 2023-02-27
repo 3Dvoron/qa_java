@@ -10,7 +10,7 @@ public class AnimalTest {
 
     @Test(expected = Exception.class)
     public void getFoodError() throws Exception {
-        List<String> actual = animal.getFood("qwerty");
+        animal.getFood("qwerty");
     }
 
     @Test

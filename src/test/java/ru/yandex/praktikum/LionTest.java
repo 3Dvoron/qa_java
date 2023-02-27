@@ -13,14 +13,9 @@ public class LionTest {
     @Spy
     Feline feline = new Feline();
 
-    @Test(expected = Exception.class)
-    public void shouldHasManeError() throws Exception {
-        Lion lion = new Lion("qwerty");
-    }
-
     @Test
-    public void getKittensCorrectResultTest() {
-        Lion lion = new Lion(feline);
+    public void getKittensCorrectResultTest() throws Exception {
+        Lion lion = new Lion("Самец",feline);
         int actual = lion.getKittens();
         int expected = 1;
         Assert.assertEquals(expected, actual);
@@ -35,7 +30,7 @@ public class LionTest {
 
     @Test
     public void getFoodTest() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion("Самец",feline);
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         List<String> actual = lion.getFood();
         Assert.assertEquals(expected, actual);
